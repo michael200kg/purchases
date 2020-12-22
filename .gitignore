@@ -1,0 +1,12 @@
+/api/.gradle/
+/api/out/
+/api/api.iml
+/.gradle/
+/.idea/
+/gradle/wrapper/
+/server/.gradle/
+/server/build/
+/server/gradle/wrapper/
+/server/src/main/server.iml
+/ui/node_modules/
+/ui/dist/purchases/
