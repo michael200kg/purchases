@@ -1,0 +1,402 @@
+openapi: 3.0.0
+info:
+  title: Purchases API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
+servers:
+  - url: http://localhost:8888/purchases
+    description: Optional server description, e.g. Main (production) server
+paths:
+  # AUTH ----------------------------------------------------------
+  /auth/login:
+    post:
+      operationId: loginUser
+      summary: "Logs user into the system via username amd password"
+      tags:
+        - Auth
+      requestBody:
+        description: "The user object for login"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserAuth"
+      responses:
+        '200':
+          description: "Received logged in user"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+  /auth/logout:
+    get:
+      operationId: logoutUser
+      summary: "Logs out currently logged in user session"
+      tags:
+        - Auth
+      responses:
+        '200':
+          description: "Ok response. You are now logged out"
+  /purchase:
+    get:
+      tags:
+        - Purchase
+      operationId: getPurchases
+      summary: "Get list of all Purchases"
+      parameters:
+        - in: query
+          required: false
+          name: showAll
+          description: "Id of the Purchase"
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: "Retrieved list of all Purchases"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Purchase"
+    post:
+      tags:
+        - Purchase
+      operationId: createPurchase
+      summary: "Creates new Purchase"
+      requestBody:
+        description: "Purchase"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Purchase"
+      responses:
+        '200':
+          description: "Created Purchase"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Purchase"
+    put:
+      tags:
+        - Purchase
+      operationId: editPurchase
+      summary: "Edits Purchase"
+      requestBody:
+        description: "Purchase"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Purchase"
+      responses:
+        '200':
+          description: "Edited Purchase"
+  /purchase/getPurchaseById:
+    get:
+      tags:
+        - Purchase
+      operationId: getPurchaseById
+      summary: "Get Purchase by id"
+      parameters:
+        - in: query
+          required: true
+          name: purchaseId
+          description: "Id of the Purchase"
+          schema:
+            type: integer
+        - in: query
+          required: false
+          name: showAll
+          description: "Id of the Purchase"
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: "Retrieved Purchase"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Purchase"
+    delete:
+      tags:
+        - Purchase
+      operationId: deletePurchase
+      summary: "Deletes existing Purchase"
+      parameters:
+        - in: path
+          required: true
+          name: purchaseId
+          description: "Id of the Purchase"
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: "Deleted Purchase"
+
+  /purchaseItem/toggle/{purchaseItemId}:
+    put:
+      tags:
+        - Purchase Item
+      operationId: togglePurchaseItem
+      summary: "Toggle purchase item check"
+      parameters:
+        - in: path
+          required: true
+          name: purchaseItemId
+          description: "Id of the PurchaseItem"
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: "Edited Purchase"
+  /user:
+    get:
+      tags:
+        - User
+      operationId: getUsers
+      summary: "Get list of all Users"
+      responses:
+        '200':
+          description: "Retrieved list of all Purchases"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+    post:
+      tags:
+        - User
+      operationId: createUser
+      summary: "Create user"
+      requestBody:
+        description: "User"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        '200':
+          description: "Edited Purchase"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+    put:
+      tags:
+        - User
+      operationId: updateUser
+      summary: "Edit user"
+      requestBody:
+        description: "User"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        '200':
+          description: "Edited Purchase"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+  /user/password:
+    put:
+      tags:
+        - User
+      operationId: updatePassword
+      summary: Update user password - disable with AD integration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PasswordUpdateHolder"
+      responses:
+        '200':
+          description: "Updated password"
+  /template:
+    get:
+      tags:
+        - Purchase Template
+      operationId: getTemplates
+      summary: "Get list of all Templates"
+      responses:
+        '200':
+          description: "Retrieved list of all Templates"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PurchaseTemplate"
+    post:
+      tags:
+        - Purchase Template
+      operationId: createTemplate
+      summary: "Creates new PurchaseTemplate"
+      requestBody:
+        description: "Template"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PurchaseTemplate"
+      responses:
+        '200':
+          description: "Created Purchase Template"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PurchaseTemplate"
+    put:
+      tags:
+        - Purchase Template
+      operationId: editTemplate
+      summary: "Edit Purchase Template"
+      requestBody:
+        description: "Template"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PurchaseTemplate"
+      responses:
+        '200':
+          description: "Edited Purchase Template"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PurchaseTemplate"
+  /template/{templateId}:
+    get:
+      tags:
+        - Purchase Template
+      operationId: getTemplateById
+      summary: "Get Purchase Template by id"
+      parameters:
+        - in: path
+          required: true
+          name: templateId
+          description: "Id Purchase of the Template"
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: "Retrieved Purchase Template"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PurchaseTemplate"
+    delete:
+      tags:
+        - Purchase Template
+      operationId: deleteTemplate
+      summary: "Deletes existing Purchase Template"
+      parameters:
+        - in: path
+          required: true
+          name: templateId
+          description: "Id of the Purchase Template"
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: "Deleted Purchase Template"
+
+
+# MODEL ----------------------------------------------------------------
+components:
+  schemas:
+    Purchase:
+      type: object
+      properties:
+        id:
+          type: integer
+        createdDate:
+          type: string
+          format: date-time
+        checked:
+          type: boolean
+        checkedDate:
+          type: string
+          format: date-time
+        name:
+          type: string
+        text:
+          type: string
+        username:
+          type: string
+        shared:
+          type: boolean
+        sharedForUsername:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/PurchaseItem"
+    PurchaseItem:
+      type: object
+      properties:
+        id:
+          type: integer
+        purchaseId:
+          type: integer
+        checked:
+          type: boolean
+        checkedDate:
+          type: string
+          format: date-time
+        itemName:
+          type: string
+        itemDescription:
+          type: string
+        active:
+          type: boolean
+    PurchaseTemplate:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        text:
+          type: string
+        username:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/PurchaseTemplateItem"
+    PurchaseTemplateItem:
+      type: object
+      properties:
+        id:
+          type: integer
+        purchaseTemplateId:
+          type: integer
+        itemName:
+          type: string
+        itemDescription:
+          type: string
+    UserAuth:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+
+    User:
+      type: object
+      properties:
+        username:
+          type: string
+        fio:
+          type: string
+        apiKey:
+          type: string
+    PasswordUpdateHolder:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string

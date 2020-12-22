@@ -1,0 +1,48 @@
+<mat-card>
+
+    <mat-card-header class="header">
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <div fxFlex="90">СПИСОК ПОКУПОК</div>
+                <div fxFlex="10">
+                    <button mat-icon-button (click)="createPurchase()">
+                        <mat-icon style="color:#fff;">add_circle</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <div style="margin-top:20px" fxLayout="column" fxLayoutGap="10px">
+
+            <div style="border-bottom: 1px solid lightgray" *ngFor="let p of purchases"
+                 fxLayout="row">
+                <div fxFlex="90">
+                    <div fxLayout="column">
+                        <div style="font-size: 10pt;">{{p.createdDate | date: 'dd.MM.yyyy'}}</div>
+                        <div [class]="getCheckedClass(p)" (click)="checkPurchase(p.id)" fxFlex="100">
+                            <b>{{p.name}}</b>
+                        </div>
+                    </div>
+                </div>
+                <div fxFlex="10">
+                    <button mat-icon-button
+                            [matMenuTriggerFor]="appMenu"
+                            [matMenuTriggerData]="{id: p.id}">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-menu #appMenu="matMenu">
+    <ng-template matMenuContent let-id="id">
+        <button mat-menu-item (click)="editPurchase(id)">Изменить</button>
+        <button mat-menu-item (click)="deletePurchase(id)">Удалить</button>
+    </ng-template>
+</mat-menu>
+

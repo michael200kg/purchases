@@ -1,0 +1,8 @@
+{
+  "modelPackage": "com.michael200kg.purchaseserver.openapi.dto",
+  "apiPackage": "com.michael200kg.purchaseserver.openapi.api",
+  "sourceFolder": "source",
+  "interfaceOnly": "true",
+  "useTags": "true",
+  "serializableModel": "true"
+}

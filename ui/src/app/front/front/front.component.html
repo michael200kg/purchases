@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="start center">
+    <button mat-icon-button [matMenuTriggerFor]="menu" >
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/auth/logout">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Выйти</span>
+        </button>
+        <button mat-menu-item  routerLink="/app/front/profile/edit">
+            <mat-icon>sentiment_satisfied</mat-icon>
+            <span>Профиль</span>
+        </button>
+        <button mat-menu-item  routerLink="/app/front/profile/change-password">
+            <mat-icon>password</mat-icon>
+            <span>Сменить пароль</span>
+        </button>
+
+    </mat-menu>
+
+    <div class="user-title">{{user.fio}}</div>
+
+</div>
+
+<router-outlet></router-outlet>

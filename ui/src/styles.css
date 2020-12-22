@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    height: 40px !important;
+}
+.mat-list-item:nth-child(2n+1){
+    background-color:#f1eded;
+}
+.mat-list-item:nth-child(2n){
+    background-color:white;
+}
+
+.checked-item {
+    text-decoration: line-through;
+    color: lightgray;
+}
+
+.unchecked-item {
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,18 @@
+<div class="mt-5 ml-4" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="20px">
+
+    <h4>Профиль: {{user.username}} </h4>
+
+    <div fxLayout="row" style="min-width: 90%" fxLayoutAlign="start center">
+        <div fxFlex="20">ФИО</div>
+        <input fxFlex="80"
+               id="fio"
+               class="form-control form-control-sm"
+               [(ngModel)]="user.fio">
+
+    </div>
+
+    <div fxLayout="row" fxLayoutGap="10px">
+        <button class="mat-button" (click)="update()">Изменить</button>
+        <button class="mat-button" routerLink="/app/front/purchases">Выйти</button>
+    </div>
+</div>

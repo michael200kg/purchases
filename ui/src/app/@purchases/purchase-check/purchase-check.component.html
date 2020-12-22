@@ -1,0 +1,40 @@
+<div class="card">
+
+    <div class="card-body">
+
+        <div fxLayout="column" fxLayoutGap="5px">
+            <div *ngIf="purchase">
+                <h4>{{purchase.name}}</h4>
+            </div>
+
+            <mat-list *ngIf="purchase">
+                <mat-list-item *ngFor="let item of purchase.items">
+                    <div fxLayout="row" style="width:100%" fxLayoutAlign="start center" fxLayoutGap="10px">
+                        <div fxFlex="10"
+                             [class]="item.checked ? 'checked-item' : 'unchecked-item'"
+                             mat-line>
+                            <mat-icon
+                                    (click)="toggle(item.id)">{{item.checked ? 'check_circle_outline' : 'radio_button_unchecked'}}</mat-icon>
+                        </div>
+                        <div fxFlex="80" (click)="toggle(item.id)"
+                             [class]="item.checked ? 'checked-item' : 'unchecked-item'"
+                             mat-line>{{item.itemName}}</div>
+                        <div fxFlex="10"
+                             [class]="item.checked ? 'checked-item' : 'unchecked-item'">
+                            <mat-icon (click)="editItem(item)">construction</mat-icon>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+
+        </div>
+
+    </div>
+    <div class="card-footer">
+        <div fxLayout="row" fxLayoutGap="10px">
+            <button class="btn btn-success btn-sm" routerLink="/app/front/purchases">
+                Выход
+            </button>
+        </div>
+    </div>
+</div>

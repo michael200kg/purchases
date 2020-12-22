@@ -1,0 +1,87 @@
+  /$PATH$:
+    get:
+      tags:
+        - $TAG$
+      operationId: get$ENTITY$s
+      summary: "Get list of all $ENTITY$s"
+      responses:
+        '200':
+          description: "Retrieved list of all $ENTITY$s"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/$ENTITY$"
+    post:
+      tags:
+        - $TAG$
+      operationId: create$ENTITY$
+      summary: "Creates new $ENTITY$"
+      requestBody:
+        description: "$ENTITY$"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/$ENTITY$"
+      responses:
+        '200':
+          description: "Created $ENTITY$"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/$ENTITY$"
+    put:
+      tags:
+        - $TAG$
+      operationId: edit$ENTITY$
+      summary: "Edits $ENTITY$"
+      requestBody:
+        description: "$ENTITY$"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/$ENTITY$"
+      responses:
+        '200':
+          description: "Edited $ENTITY$"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/$ENTITY$"
+  /$PATH$/{$ENTITY_CAMEL_CASE$Id}:
+    get:
+      tags:
+        - $TAG$
+      operationId: get$ENTITY$ById
+      summary: "Get $ENTITY$ by id"
+      parameters:
+        - in: path
+          required: true
+          name: $ENTITY_CAMEL_CASE$Id
+          description: "Id of the $ENTITY$"
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: "Retrieved $ENTITY$"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/$ENTITY$"
+    delete:
+      tags:
+        - $TAG$
+      operationId: delete$ENTITY$
+      summary: "Deletes existing $ENTITY$"
+      parameters:
+        - in: path
+          required: true
+          name: $ENTITY_CAMEL_CASE$Id
+          description: "Id of the $ENTITY$"
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: "Deleted $ENTITY$"
+    $END$

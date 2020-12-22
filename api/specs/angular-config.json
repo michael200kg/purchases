@@ -1,0 +1,21 @@
+{
+  "sortParamsByRequiredFlag":"true",
+  "ensureUniqueParams":"true",
+  "allowUnicodeIdentifiers":"false",
+  "prependFormOrBodyParameters":"false",
+  "modelPropertyNaming":"camelCase",
+  "supportsES6":"false",
+  "npmName":"asdfNpmPackage",
+  "npmVersion":"1.0.1",
+  "npmRepository":"",
+  "snapshot":"false",
+  "withInterfaces":"true",
+  "taggedUnions":"false",
+  "providedInRoot":"true",
+  "ngVersion": "8.0.0",
+  "serviceSuffix":"Service",
+  "serviceFileSuffix":".service",
+  "modelSuffix":"",
+  "modelFileSuffix":"",
+  "fileNaming":"camelCase"
+}

@@ -1,0 +1,59 @@
+apply plugin: 'java'
+
+configurations {
+    oagen
+}
+
+dependencies {
+    oagen 'org.openapitools:openapi-generator-cli:4.2.2'
+}
+
+task findOagenJar {
+    println configurations.oagen.asPath
+}
+
+processResources.enabled = false
+classes.enabled = false
+
+def commandPrefix = [configurations.oagen.asPath, 'generate', '-i', './specs/swagger.yaml', '-g']
+
+def springCommand = commandPrefix + ['spring', '-o', './out/spring', '-c', './specs/spring-config.json']
+def angularCommand = commandPrefix + ['typescript-angular', '-t', './angular-templates', '-o', './out/angular/@api-module', '-c', './specs/angular-config.json']
+
+task cleanApiAngular(type: Delete) {
+    delete '../ui/src/app/@openapi', './out/angular'
+}
+
+task generateApiAngular(type: JavaExec) {
+    dependsOn cleanApiAngular
+    main = "-jar"
+    args(angularCommand)
+}
+
+task cleanApiSpring(type: Delete) {
+    delete '../server/src/main/java/com/michael200kg/purchaseserver/openapi', './out/spring'
+}
+
+task generateApiSpring(type: JavaExec) {
+    dependsOn cleanApiSpring
+    main = "-jar"
+    args(springCommand)
+}
+
+task copyAngularApi(type: Copy) {
+    dependsOn generateApiAngular
+    from './out/angular'
+    include '**/*.ts'
+    exclude '@api-module/.openapi-generator'
+    into '../ui/src/app'
+}
+
+task copySpringApi(type: Copy) {
+    dependsOn generateApiSpring
+    from './out/spring/source/com/michael200kg/purchaseserver/openapi'
+    into '../server/src/main/java/com/michael200kg/purchaseserver/openapi'
+}
+
+task buildApiStubs(type: DefaultTask) {
+    dependsOn copyAngularApi, copySpringApi
+}
