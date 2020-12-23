@@ -173,7 +173,7 @@ export class PurchaseService implements PurchaseServiceInterface {
             responseType = 'text';
         }
 
-        return this.httpClient.delete<any>(`${this.configuration.basePath}/purchase/getPurchaseById`,
+        return this.httpClient.delete<any>(`${this.configuration.basePath}/purchase/${encodeURIComponent(String(purchaseId))}`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,

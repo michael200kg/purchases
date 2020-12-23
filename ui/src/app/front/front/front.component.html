@@ -3,9 +3,13 @@
         <mat-icon>account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/auth/logout">
-            <mat-icon>exit_to_app</mat-icon>
-            <span>Выйти</span>
+        <button mat-menu-item routerLink="/app/front/purchases/purchase-list">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>Покупки</span>
+        </button>
+        <button mat-menu-item routerLink="/app/front/templates/template-list">
+            <mat-icon>library_books</mat-icon>
+            <span>Шаблоны</span>
         </button>
         <button mat-menu-item  routerLink="/app/front/profile/edit">
             <mat-icon>sentiment_satisfied</mat-icon>

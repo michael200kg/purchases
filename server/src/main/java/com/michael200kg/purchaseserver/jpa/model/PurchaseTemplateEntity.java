@@ -28,6 +28,6 @@ public class PurchaseTemplateEntity {
     private String text;
     private String username;
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="purchaseTemplateId")
+    @JoinColumn(name = "purchaseTemplateId")
     private Set<PurchaseTemplateItemEntity> items = new HashSet<>();
 }

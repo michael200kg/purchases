@@ -90,6 +90,22 @@ paths:
       responses:
         '200':
           description: "Edited Purchase"
+  /purchase/{purchaseId}:
+    delete:
+      tags:
+        - Purchase
+      operationId: deletePurchase
+      summary: "Deletes existing Purchase"
+      parameters:
+        - in: path
+          required: true
+          name: purchaseId
+          description: "Id of the Purchase"
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: "Deleted Purchase"
   /purchase/getPurchaseById:
     get:
       tags:
@@ -116,21 +132,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Purchase"
-    delete:
-      tags:
-        - Purchase
-      operationId: deletePurchase
-      summary: "Deletes existing Purchase"
-      parameters:
-        - in: path
-          required: true
-          name: purchaseId
-          description: "Id of the Purchase"
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: "Deleted Purchase"
+
 
   /purchaseItem/toggle/{purchaseItemId}:
     put:

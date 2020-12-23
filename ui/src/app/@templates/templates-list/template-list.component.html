@@ -1,0 +1,34 @@
+<mat-card>
+
+    <mat-card-header class="header">
+
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <div fxFlex="90">ШАБЛОНЫ ПОКУПОК</div>
+            <div fxFlex="10">
+                <button mat-icon-button (click)="createTemplate()">
+                    <mat-icon style="color:#fff;">add_circle</mat-icon>
+                </button>
+            </div>
+        </div>
+
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <div style="margin-top:20px" fxLayout="column" fxLayoutGap="10px">
+
+            <div style="border-bottom: 1px solid lightgray" *ngFor="let t of templates"
+                 fxLayout="row">
+                <div fxFlex="90">
+                    <div (click)="editTemplate(t.id)" fxFlex="100">
+                        <b>{{t.name}}</b>
+                    </div>
+                    <div fxFlex="10">
+                        <mat-icon fxFlex="10" (click)="deleteTemplate(t.id)" color="warn">clear</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+

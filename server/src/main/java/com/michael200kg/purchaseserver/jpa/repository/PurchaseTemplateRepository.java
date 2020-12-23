@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface PurchaseTemplateRepository extends JpaRepository<PurchaseTemplateEntity, Integer> {
     List<PurchaseTemplateEntity> findAllByUsernameOrderByIdDesc(String username);
+    void deleteById(Integer templateId);
 }

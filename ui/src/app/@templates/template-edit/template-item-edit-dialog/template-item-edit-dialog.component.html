@@ -1,0 +1,25 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+
+    <form *ngIf="templateItemForm" [formGroup]="templateItemForm">
+        <div fxLayout="column" fxLayoutGap="10px">
+            <label for="name">Наименование</label>
+            <textarea class="form-control form-control-sm"
+                      rows="5"
+                      formControlName="name"
+                      id="name"
+                      type="text">
+                        </textarea>
+        </div>
+    </form>
+
+
+    <div fxLayout="row" fxLayoutGap="10px">
+        <button (click)="save()" class="btn btn-success btn-sm">
+            Сохранить
+        </button>
+        <button (click)="cancel()" class="btn btn-success btn-sm">
+            Выход
+        </button>
+    </div>
+
+</div>

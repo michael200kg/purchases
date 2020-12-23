@@ -33,8 +33,8 @@ public class PurchaseTemplateApiController implements PurchaseTemplateApi {
     @Override
     public ResponseEntity<PurchaseTemplate> createTemplate(PurchaseTemplate purchaseTemplate) {
         PurchaseTemplateEntity entity = purchaseTemplateModelConverter.dtoToEntity(purchaseTemplate);
-        PurchaseTemplateEntity persisted = purchaseTemplateRepository.saveAndFlush(entity);
-        return ResponseEntity.ok(purchaseTemplateModelConverter.entityToDto(persisted));
+        entity = purchaseTemplateRepository.saveAndFlush(entity);
+        return ResponseEntity.ok(purchaseTemplateModelConverter.entityToDto(entity));
     }
 
     @Override

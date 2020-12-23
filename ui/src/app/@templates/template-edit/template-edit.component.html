@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-body">
+        <form *ngIf="templateForm" [formGroup]="templateForm">
+            <div fxLayout="column" fxLayoutGap="10px">
+
+                <div fxFlex="90" fxLayout="column">
+                    <div>Наименование шаблона:</div>
+                    <input class="form-control form-control-sm"
+                           formControlName="name"
+                           id="name"
+                           type="text">
+                </div>
+
+
+                <div fxFlex="90" fxLayout="column">
+                    <div>Добавить товар:</div>
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+
+                        <input class="form-control form-control-sm"
+                               formControlName="itemName"
+                               id="itemName"
+                               type="text">
+                        <button mat-mini-fab color="primary"
+                                (click)="addItem()">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <mat-list>
+                    <mat-list-item *ngFor="let item of template.items">
+                        <div fxLayout="row" style="width:100%" fxLayoutAlign="start center">
+                            <div fxFlex="90" (click)="editItem(item.id)">{{item.itemName}}</div>
+                            <mat-icon fxFlex="10" (click)="deleteItem(item.id)" color="warn">clear</mat-icon>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+
+            </div>
+
+        </form>
+    </div>
+    <div class="card-footer">
+        <div fxLayout="row" fxLayoutGap="10px">
+            <button (click)="save()" class="btn btn-success btn-sm">
+                {{buttonLabel}}
+            </button>
+            <button routerLink="'/app/front/templates/template-list'" class="btn btn-success btn-sm">
+                Выход
+            </button>
+        </div>
+    </div>
+</div>

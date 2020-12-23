@@ -71,7 +71,7 @@ public class PurchaseApiController implements PurchaseApi {
         PurchaseEntity entity = purchaseModelConverter.dtoToEntity(purchase);
         entity.setCreatedDate(now());
         entity.setUsername(userAuthenticationService.getCurrentUser().getUsername());
-        purchaseRepository.saveAndFlush(entity);
+        entity = purchaseRepository.saveAndFlush(entity);
         return new ResponseEntity<>(purchaseModelConverter.entityToDto(entity), OK);
     }
 

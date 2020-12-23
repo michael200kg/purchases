@@ -26,7 +26,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-22T15:32:56.031881100+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-23T02:38:42.234076500+03:00[Europe/Moscow]")
 
 @Validated
 @Api(value = "Purchase", description = "the Purchase API")
@@ -61,7 +61,7 @@ public interface PurchaseApi {
     @ApiOperation(value = "Deletes existing Purchase", nickname = "deletePurchase", notes = "", tags={ "Purchase", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Deleted Purchase") })
-    @RequestMapping(value = "/purchase/getPurchaseById",
+    @RequestMapping(value = "/purchase/{purchaseId}",
         method = RequestMethod.DELETE)
     default ResponseEntity<Void> deletePurchase(@ApiParam(value = "Id of the Purchase",required=true) @PathVariable("purchaseId") Integer purchaseId) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);

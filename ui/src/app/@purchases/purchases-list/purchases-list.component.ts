@@ -23,7 +23,7 @@ export class PurchasesListComponent implements OnInit {
         .subscribe(x => {
           this.purchases = x.filter(y => y.items.some(z => !z.checked));
           this.purchases.push(
-              ...x.filter(y => y.items.map(z => z.checked).reduce((z1, z2) => z1 && z2))
+              ...x.filter(y => y.items.map(z => z.checked).reduce((z1, z2) => z1 && z2, true))
           );
         });
   }
@@ -37,11 +37,9 @@ export class PurchasesListComponent implements OnInit {
   }
 
   createPurchase() {
-
     this.router.navigate(['/app/front/purchases/purchase-edit', {purchaseId: 0}], {relativeTo: this.route}).then(() => {
       this.refreshTable();
     });
-
   }
 
   editPurchase(id: number) {
