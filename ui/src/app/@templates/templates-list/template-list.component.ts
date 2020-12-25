@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Purchase, PurchaseTemplate, PurchaseTemplateService } from '../../@api-module';
+import { Purchase, PurchaseService, PurchaseTemplate, PurchaseTemplateService } from '../../@api-module';
 import { BehaviorSubject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
@@ -16,6 +16,7 @@ export class TemplateListComponent implements OnInit {
   refresh$ = new BehaviorSubject<string>('');
 
   constructor(private templateService: PurchaseTemplateService,
+              private purchaseService: PurchaseService,
               private dialog: MatDialog,
               private router: Router,
               private route: ActivatedRoute) {
@@ -52,6 +53,13 @@ export class TemplateListComponent implements OnInit {
         this.refreshTable();
       });
     }
+  }
+
+  createPurchase(template: PurchaseTemplate) {
+    this.purchaseService.createFromTemplate(template).subscribe(x => {
+      this.router.navigate(['/app/front/purchases/purchase-edit', {purchaseId: x.id}], {relativeTo: this.route}).then(() => {
+      });
+    });
   }
 
 }

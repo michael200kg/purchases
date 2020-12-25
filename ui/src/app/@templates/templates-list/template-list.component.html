@@ -18,13 +18,20 @@
         <div style="margin-top:20px" fxLayout="column" fxLayoutGap="10px">
 
             <div style="border-bottom: 1px solid lightgray" *ngFor="let t of templates"
-                 fxLayout="row">
-                <div fxFlex="90">
-                    <div (click)="editTemplate(t.id)" fxFlex="100">
+                 fxLayout="row" fxLayoutAlign="start center">
+                <div fxFlex="100">
+                    <div (click)="editTemplate(t.id)" fxFlex="70">
                         <b>{{t.name}}</b>
                     </div>
-                    <div fxFlex="10">
-                        <mat-icon fxFlex="10" (click)="deleteTemplate(t.id)" color="warn">clear</mat-icon>
+                    <div fxFlex="15">
+                        <button mat-mini-fab (click)="createPurchase(t)" color="primary">
+                            <mat-icon>arrow_upward</mat-icon>
+                        </button>
+                    </div>
+                    <div fxFlex="15">
+                        <button mat-mini-fab (click)="deleteTemplate(t.id)" color="warn">
+                            <mat-icon>clear</mat-icon>
+                        </button>
                     </div>
                 </div>
             </div>

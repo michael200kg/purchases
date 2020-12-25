@@ -6,6 +6,7 @@
 package com.michael200kg.purchaseserver.openapi.api;
 
 import com.michael200kg.purchaseserver.openapi.dto.Purchase;
+import com.michael200kg.purchaseserver.openapi.dto.PurchaseTemplate;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-23T02:38:42.234076500+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-23T09:45:59.473447+03:00[Europe/Moscow]")
 
 @Validated
 @Api(value = "Purchase", description = "the Purchase API")
@@ -35,6 +36,28 @@ public interface PurchaseApi {
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
+
+    @ApiOperation(value = "creating Purchase from PurchaseTemplate", nickname = "createFromTemplate", notes = "", response = Purchase.class, tags={ "Purchase", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Retrieved Purchase", response = Purchase.class) })
+    @RequestMapping(value = "/purchase/fromTemplate",
+        produces = { "application/json" }, 
+        consumes = { "application/json" },
+        method = RequestMethod.POST)
+    default ResponseEntity<Purchase> createFromTemplate(@ApiParam(value = "PurchaseTemplate"  )  @Valid @RequestBody PurchaseTemplate purchaseTemplate) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
 
     @ApiOperation(value = "Creates new Purchase", nickname = "createPurchase", notes = "", response = Purchase.class, tags={ "Purchase", })
     @ApiResponses(value = { 

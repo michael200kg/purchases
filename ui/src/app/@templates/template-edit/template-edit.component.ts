@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PurchaseTemplate, PurchaseTemplateItem, PurchaseTemplateService } from '../../@api-module';
+import { PurchaseService, PurchaseTemplate, PurchaseTemplateItem, PurchaseTemplateService } from '../../@api-module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,6 +25,7 @@ export class TemplateEditComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private templateService: PurchaseTemplateService,
+              private purchaseService: PurchaseService,
               private route: ActivatedRoute,
               private router: Router,
               private dialog: MatDialog,
@@ -119,6 +120,14 @@ export class TemplateEditComponent implements OnInit {
     this.updateEntity();
     this.resolveService(this.template).subscribe(() => {
       this.router.navigate(['/app/front/templates/template-list']).then(() => {
+      });
+    });
+  }
+
+  createPurchase() {
+    this.updateEntity();
+    this.purchaseService.createFromTemplate(this.template).subscribe(x => {
+      this.router.navigate(['/app/front/purchases/purchase-edit', {purchaseId: x.id}], {relativeTo: this.route}).then(() => {
       });
     });
   }

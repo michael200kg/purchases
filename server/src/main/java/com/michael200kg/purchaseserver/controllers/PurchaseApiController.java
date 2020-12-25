@@ -7,6 +7,7 @@ import com.michael200kg.purchaseserver.jpa.model.UserEntity;
 import com.michael200kg.purchaseserver.jpa.repository.PurchaseRepository;
 import com.michael200kg.purchaseserver.openapi.api.PurchaseApi;
 import com.michael200kg.purchaseserver.openapi.dto.Purchase;
+import com.michael200kg.purchaseserver.openapi.dto.PurchaseTemplate;
 import com.michael200kg.purchaseserver.service.auth.UserAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -99,5 +101,32 @@ public class PurchaseApiController implements PurchaseApi {
             purchaseEntity.setItems(items);
         }
         return new ResponseEntity<>(purchaseModelConverter.entityToDto(purchaseEntity), OK);
+    }
+
+    @Override
+    public ResponseEntity<Purchase> createFromTemplate(PurchaseTemplate purchaseTemplate) {
+        PurchaseEntity purchaseEntity = PurchaseEntity.builder()
+                .createdDate(now())
+                .username(userAuthenticationService.getCurrentUser().getUsername())
+                .checked(false)
+                .name(purchaseTemplate.getName())
+                .shared(false)
+                .text(purchaseTemplate.getText())
+                .build();
+        Set<PurchaseItemEntity> items = new HashSet<>();
+        if (nonNull(purchaseTemplate.getItems()) && purchaseTemplate.getItems().size() > 0) {
+            purchaseTemplate.getItems().forEach(templateItem -> {
+                PurchaseItemEntity itemEntity = PurchaseItemEntity.builder()
+                        .itemName(templateItem.getItemName())
+                        .itemDescription(templateItem.getItemDescription())
+                        .checked(true)
+                        .active(true)
+                        .checked(false)
+                        .build();
+                items.add(itemEntity);
+            });
+        }
+        purchaseEntity.setItems(items);
+        return ResponseEntity.ok(purchaseModelConverter.entityToDto(purchaseRepository.saveAndFlush(purchaseEntity)));
     }
 }

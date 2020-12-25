@@ -11,3 +11,11 @@ spring:
     hikari:
       connection-timeout: 60000
       maximum-pool-size: 5
+  flyway:
+    locations: classpath:migration
+    table: schema_version
+    baselineOnMigrate: true # Whether to automatically call baseline when migrate is executed against a non-empty schema with no metadata table.
+    cleanDisabled: true  # Whether to disable clean. This is especially useful for production environments where running clean can be quite a career limiting move.
+    outOfOrder: true # Set it to true in dev profiles
+    user: root
+    password: admin

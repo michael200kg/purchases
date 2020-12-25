@@ -14,6 +14,7 @@ import { HttpHeaders }                                       from '@angular/comm
 import { Observable }                                        from 'rxjs';
 
 import { Purchase } from '../model/models';
+import { PurchaseTemplate } from '../model/models';
 
 
 import { Configuration }                                     from '../configuration';
@@ -24,6 +25,13 @@ export interface PurchaseServiceInterface {
     defaultHeaders: HttpHeaders;
     configuration: Configuration;
     
+
+    /**
+     * creating Purchase from PurchaseTemplate
+     * 
+     * @param purchaseTemplate PurchaseTemplate
+     */
+    createFromTemplate(purchaseTemplate?: PurchaseTemplate, extraHttpRequestParams?: any): Observable<Purchase>;
 
     /**
      * Creates new Purchase

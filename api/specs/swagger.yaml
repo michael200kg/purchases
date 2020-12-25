@@ -132,8 +132,25 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Purchase"
-
-
+  /purchase/fromTemplate:
+    post:
+      tags:
+        - Purchase
+      operationId: createFromTemplate
+      summary: "creating Purchase from PurchaseTemplate"
+      requestBody:
+        description: "PurchaseTemplate"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PurchaseTemplate"
+      responses:
+        '200':
+          description: "Retrieved Purchase"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Purchase"
   /purchaseItem/toggle/{purchaseItemId}:
     put:
       tags:
