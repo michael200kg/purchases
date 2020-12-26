@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
 /**
  * PasswordUpdateHolder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-23T09:45:59.473447+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-26T13:05:26.315346700+03:00[Europe/Moscow]")
 
 public class PasswordUpdateHolder  implements Serializable {
   private static final long serialVersionUID = 1L;

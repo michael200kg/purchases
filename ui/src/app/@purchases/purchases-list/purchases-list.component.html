@@ -2,14 +2,14 @@
 
     <mat-card-header class="header">
 
-            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-                <div fxFlex="90">СПИСОК ПОКУПОК</div>
-                <div fxFlex="10">
-                    <button mat-icon-button (click)="createPurchase()">
-                        <mat-icon style="color:#fff;">add_circle</mat-icon>
-                    </button>
-                </div>
+        <div fxLayout="row" style="width:100%" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <div fxFlex="80">СПИСОК ПОКУПОК</div>
+            <div>
+                <button mat-mini-fab color="primary" (click)="createPurchase()">
+                    <mat-icon>add</mat-icon>
+                </button>
             </div>
+        </div>
 
     </mat-card-header>
 
@@ -41,8 +41,14 @@
 
 <mat-menu #appMenu="matMenu">
     <ng-template matMenuContent let-id="id">
-        <button mat-menu-item (click)="editPurchase(id)">Изменить</button>
-        <button mat-menu-item (click)="deletePurchase(id)">Удалить</button>
+        <button mat-menu-item (click)="editPurchase(id)">
+            <mat-icon color="primary">edit</mat-icon>
+            <span>Изменить</span>
+        </button>
+        <button mat-menu-item (click)="deletePurchase(id)">
+            <mat-icon color="warn">cancel</mat-icon>
+            <span>Удалить</span>
+        </button>
     </ng-template>
 </mat-menu>
 

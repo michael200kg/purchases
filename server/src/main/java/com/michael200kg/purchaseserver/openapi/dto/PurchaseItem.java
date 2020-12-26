@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
 /**
  * PurchaseItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-23T09:45:59.473447+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-26T13:05:26.315346700+03:00[Europe/Moscow]")
 
 public class PurchaseItem  implements Serializable {
   private static final long serialVersionUID = 1L;
@@ -39,6 +39,9 @@ public class PurchaseItem  implements Serializable {
 
   @JsonProperty("active")
   private Boolean active;
+
+  @JsonProperty("ord")
+  private Integer ord;
 
   public PurchaseItem id(Integer id) {
     this.id = id;
@@ -181,6 +184,26 @@ public class PurchaseItem  implements Serializable {
     this.active = active;
   }
 
+  public PurchaseItem ord(Integer ord) {
+    this.ord = ord;
+    return this;
+  }
+
+  /**
+   * Get ord
+   * @return ord
+  */
+  @ApiModelProperty(value = "")
+
+
+  public Integer getOrd() {
+    return ord;
+  }
+
+  public void setOrd(Integer ord) {
+    this.ord = ord;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -197,12 +220,13 @@ public class PurchaseItem  implements Serializable {
         Objects.equals(this.checkedDate, purchaseItem.checkedDate) &&
         Objects.equals(this.itemName, purchaseItem.itemName) &&
         Objects.equals(this.itemDescription, purchaseItem.itemDescription) &&
-        Objects.equals(this.active, purchaseItem.active);
+        Objects.equals(this.active, purchaseItem.active) &&
+        Objects.equals(this.ord, purchaseItem.ord);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, purchaseId, checked, checkedDate, itemName, itemDescription, active);
+    return Objects.hash(id, purchaseId, checked, checkedDate, itemName, itemDescription, active, ord);
   }
 
   @Override
@@ -217,6 +241,7 @@ public class PurchaseItem  implements Serializable {
     sb.append("    itemName: ").append(toIndentedString(itemName)).append("\n");
     sb.append("    itemDescription: ").append(toIndentedString(itemDescription)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    ord: ").append(toIndentedString(ord)).append("\n");
     sb.append("}");
     return sb.toString();
   }

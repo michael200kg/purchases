@@ -16,6 +16,7 @@ export interface PurchaseTemplateItem {
     purchaseTemplateId?: number;
     itemName?: string;
     itemDescription?: string;
+    ord?: number;
 }
 
 

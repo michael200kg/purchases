@@ -19,6 +19,7 @@ export interface PurchaseItem {
     itemName?: string;
     itemDescription?: string;
     active?: boolean;
+    ord?: number;
 }
 
 

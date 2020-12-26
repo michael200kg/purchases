@@ -10,18 +10,19 @@
             <mat-list *ngIf="purchase">
                 <mat-list-item *ngFor="let item of purchase.items">
                     <div fxLayout="row" style="width:100%" fxLayoutAlign="start center" fxLayoutGap="10px">
-                        <div fxFlex="10"
+                        <div fxFlex="8"
                              [class]="item.checked ? 'checked-item' : 'unchecked-item'"
                              mat-line>
-                            <mat-icon
-                                    (click)="toggle(item.id)">{{item.checked ? 'check_circle_outline' : 'radio_button_unchecked'}}</mat-icon>
+                            <mat-icon (click)="toggle(item.id)">
+                                {{item.checked ? 'check_box' : 'check_box_outline_blank'}}
+                            </mat-icon>
                         </div>
                         <div fxFlex="80" (click)="toggle(item.id)"
                              [class]="item.checked ? 'checked-item' : 'unchecked-item'"
                              mat-line>{{item.itemName}}</div>
-                        <div fxFlex="10"
+                        <div fxFlex="5"
                              [class]="item.checked ? 'checked-item' : 'unchecked-item'">
-                            <mat-icon (click)="editItem(item)">construction</mat-icon>
+                            <mat-icon [color]="item.checked ? '' : 'primary'" (click)="editItem(item)">settings</mat-icon>
                         </div>
                     </div>
                 </mat-list-item>

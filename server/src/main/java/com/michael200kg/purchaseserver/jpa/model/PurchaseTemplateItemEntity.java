@@ -22,4 +22,5 @@ public class PurchaseTemplateItemEntity {
     private Integer purchaseTemplateId;
     private String itemName;
     private String itemDescription;
+    private Integer ord;
 }

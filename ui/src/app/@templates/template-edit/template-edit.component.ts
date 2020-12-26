@@ -59,10 +59,15 @@ export class TemplateEditComponent implements OnInit {
 
   addItem() {
     const itemName = this.templateForm.get('itemName').value;
+    const newOrd = this.template.items === null || this.template.items.length === 0 ?
+        1 : this.template.items
+        .map( x => x.ord)
+        .reduce((a,b) => a > b ? a : b ) + 1;
     if (itemName) {
       const newItem: PurchaseTemplateItem = {
         id: null, itemName,
-        itemDescription: null, purchaseTemplateId: this.template.id
+        itemDescription: null, purchaseTemplateId: this.template.id,
+        ord: newOrd
       };
       this.template.items.push(newItem);
       this.templateForm.get('itemName').patchValue(null);

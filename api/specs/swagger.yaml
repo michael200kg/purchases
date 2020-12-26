@@ -369,6 +369,8 @@ components:
           type: string
         active:
           type: boolean
+        ord:
+          type: integer
     PurchaseTemplate:
       type: object
       properties:
@@ -395,6 +397,8 @@ components:
           type: string
         itemDescription:
           type: string
+        ord:
+          type: integer
     UserAuth:
       type: object
       properties:

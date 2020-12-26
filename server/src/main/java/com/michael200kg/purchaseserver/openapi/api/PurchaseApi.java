@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-23T09:45:59.473447+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-26T13:05:26.315346700+03:00[Europe/Moscow]")
 
 @Validated
 @Api(value = "Purchase", description = "the Purchase API")
@@ -48,7 +48,7 @@ public interface PurchaseApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -70,7 +70,7 @@ public interface PurchaseApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -114,7 +114,7 @@ public interface PurchaseApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -135,7 +135,7 @@ public interface PurchaseApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

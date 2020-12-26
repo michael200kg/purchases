@@ -47,8 +47,8 @@ export class PurchaseCheckComponent implements OnInit {
     if (this.purchase.items && this.purchase.items.length > 0) {
       const checked = this.purchase.items.filter(x => x.checked);
       const unchecked = this.purchase.items.filter(x => !x.checked);
-      this.purchase.items = unchecked.sort((x1, x2) => x1.id > x2.id ? 1 : -1);
-      this.purchase.items.push(...checked.sort((x1, x2) => x1.id > x2.id ? 1 : -1));
+      this.purchase.items = unchecked.sort((x1, x2) => x1.ord > x2.ord ? 1 : -1);
+      this.purchase.items.push(...checked.sort((x1, x2) => x1.ord > x2.ord ? 1 : -1));
     }
   }
 

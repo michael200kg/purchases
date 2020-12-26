@@ -1,22 +1,22 @@
 <div fxLayout="row" fxLayoutAlign="start center">
     <button mat-icon-button [matMenuTriggerFor]="menu" >
-        <mat-icon>account_circle</mat-icon>
+        <mat-icon color="accent">account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item routerLink="/app/front/purchases/purchase-list">
-            <mat-icon>shopping_cart</mat-icon>
+            <mat-icon color="primary">shopping_cart</mat-icon>
             <span>Покупки</span>
         </button>
         <button mat-menu-item routerLink="/app/front/templates/template-list">
-            <mat-icon>library_books</mat-icon>
+            <mat-icon color="primary">library_books</mat-icon>
             <span>Шаблоны</span>
         </button>
-        <button mat-menu-item  routerLink="/app/front/profile/edit">
-            <mat-icon>sentiment_satisfied</mat-icon>
+        <button mat-menu-item routerLink="/app/front/profile/edit">
+            <mat-icon color="primary">sentiment_satisfied</mat-icon>
             <span>Профиль</span>
         </button>
-        <button mat-menu-item  routerLink="/app/front/profile/change-password">
-            <mat-icon>password</mat-icon>
+        <button mat-menu-item routerLink="/app/front/profile/change-password">
+            <mat-icon color="primary">password</mat-icon>
             <span>Сменить пароль</span>
         </button>
 

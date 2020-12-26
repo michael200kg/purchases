@@ -26,7 +26,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-23T09:45:59.473447+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-26T13:05:26.315346700+03:00[Europe/Moscow]")
 
 @Validated
 @Api(value = "PurchaseTemplate", description = "the PurchaseTemplate API")
@@ -47,7 +47,7 @@ public interface PurchaseTemplateApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"purchaseTemplateId\" : 1, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"purchaseTemplateId\" : 1, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"purchaseTemplateId\" : 1, \"ord\" : 5, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"purchaseTemplateId\" : 1, \"ord\" : 5, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -80,7 +80,7 @@ public interface PurchaseTemplateApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"purchaseTemplateId\" : 1, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"purchaseTemplateId\" : 1, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"purchaseTemplateId\" : 1, \"ord\" : 5, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"purchaseTemplateId\" : 1, \"ord\" : 5, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -101,7 +101,7 @@ public interface PurchaseTemplateApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"purchaseTemplateId\" : 1, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"purchaseTemplateId\" : 1, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"purchaseTemplateId\" : 1, \"ord\" : 5, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"purchaseTemplateId\" : 1, \"ord\" : 5, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -122,7 +122,7 @@ public interface PurchaseTemplateApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"purchaseTemplateId\" : 1, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"purchaseTemplateId\" : 1, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"purchaseTemplateId\" : 1, \"ord\" : 5, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"purchaseTemplateId\" : 1, \"ord\" : 5, \"itemName\" : \"itemName\", \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

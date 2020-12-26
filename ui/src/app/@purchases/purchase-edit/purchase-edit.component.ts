@@ -78,10 +78,14 @@ export class PurchaseEditComponent implements OnInit {
   addItem() {
     const itemName = this.purchaseForm.get('itemName').value;
     if (itemName) {
+      const newOrd = this.purchase.items === null || this.purchase.items.length === 0 ?
+        1 : this.purchase.items
+          .map( x => x.ord)
+          .reduce((a,b) => a > b ? a : b ) + 1;
       const newItem: PurchaseItem = {
         id: null, itemName, checked: false,
         itemDescription: null, purchaseId: this.purchase.id,
-        active: true
+        active: true, ord: newOrd
       };
       this.purchase.items.push(newItem);
       this.purchaseForm.get('itemName').patchValue(null);
