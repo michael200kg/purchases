@@ -7,6 +7,7 @@ import { AuthService } from './api/auth.service';
 import { PurchaseService } from './api/purchase.service';
 import { PurchaseItemService } from './api/purchaseItem.service';
 import { PurchaseTemplateService } from './api/purchaseTemplate.service';
+import { TestPurchasesService } from './api/testPurchases.service';
 import { UserService } from './api/user.service';
 
 @NgModule({

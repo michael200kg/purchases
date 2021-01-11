@@ -7,6 +7,21 @@ servers:
   - url: http://localhost:8888/purchases
     description: Optional server description, e.g. Main (production) server
 paths:
+  /test/purchases:
+    get:
+      tags:
+        - Test Purchases
+      operationId: getTestMessage
+      summary: "Get test message"
+      responses:
+        '200':
+          description: "Retrieved list of all Purchases"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Purchase"
   # AUTH ----------------------------------------------------------
   /auth/login:
     post:

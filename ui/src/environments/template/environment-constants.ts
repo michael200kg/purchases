@@ -2,7 +2,7 @@ const HTTP = 'http://';
 
 const REST_API_ENDPOINT = '/purchases';
 
-export const AWS_SERVER_HOST = 'ec2-13-58-91-80.us-east-2.compute.amazonaws.com';
+export const AWS_SERVER_HOST = '@AWS_PATH@';
 export const LOCAL_SERVER_HOST = 'localhost';
 export const SERVER_PORT = '8888';
 

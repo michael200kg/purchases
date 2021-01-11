@@ -10,7 +10,10 @@ export * from './purchaseItem.serviceInterface'
 export * from './purchaseTemplate.service';
 import { PurchaseTemplateService } from './purchaseTemplate.service';
 export * from './purchaseTemplate.serviceInterface'
+export * from './testPurchases.service';
+import { TestPurchasesService } from './testPurchases.service';
+export * from './testPurchases.serviceInterface'
 export * from './user.service';
 import { UserService } from './user.service';
 export * from './user.serviceInterface'
-export const APIS = [AuthService, PurchaseService, PurchaseItemService, PurchaseTemplateService, UserService];
+export const APIS = [AuthService, PurchaseService, PurchaseItemService, PurchaseTemplateService, TestPurchasesService, UserService];

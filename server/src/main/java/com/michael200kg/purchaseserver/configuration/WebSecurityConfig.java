@@ -52,16 +52,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors().configurationSource(corsConfigurationSource()).and()
                 .authorizeRequests()
                 .antMatchers("/purchases/auth/login").permitAll()
+                .antMatchers("/purchases/test/**").permitAll()
                 .anyRequest().authenticated().and()
                 .logout().invalidateHttpSession(true)
-                .logoutRequestMatcher(new AntPathRequestMatcher("/service/v2/user/logout")).and()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/purchases/auth/logout")).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthEntryPoint).and()
                 .addFilterBefore(new JwtAuthorizationFilter(authenticationManager(), tokenProvider),
                         BasicAuthenticationFilter.class)
                 .addFilterBefore(new JwtAuthenticationFilter(authenticationManager(), tokenProvider),
                         UsernamePasswordAuthenticationFilter.class)
-                .sessionManagement().maximumSessions(1000).expiredUrl("/service/v2/auth/login");
+                .sessionManagement().maximumSessions(1000).expiredUrl("/purchases/auth/login");
 
     }
 

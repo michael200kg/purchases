@@ -5,8 +5,7 @@
  */
 package com.michael200kg.purchaseserver.openapi.api;
 
-import com.michael200kg.purchaseserver.openapi.dto.User;
-import com.michael200kg.purchaseserver.openapi.dto.UserAuth;
+import com.michael200kg.purchaseserver.openapi.dto.Purchase;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -30,41 +29,29 @@ import java.util.Optional;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-01-08T01:41:58.754751300+03:00[Europe/Moscow]")
 
 @Validated
-@Api(value = "Auth", description = "the Auth API")
-public interface AuthApi {
+@Api(value = "TestPurchases", description = "the TestPurchases API")
+public interface TestPurchasesApi {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
 
-    @ApiOperation(value = "Logs user into the system via username amd password", nickname = "loginUser", notes = "", response = User.class, tags={ "Auth", })
+    @ApiOperation(value = "Get test message", nickname = "getTestMessage", notes = "", response = Purchase.class, responseContainer = "List", tags={ "Test Purchases", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Received logged in user", response = User.class) })
-    @RequestMapping(value = "/auth/login",
+        @ApiResponse(code = 200, message = "Retrieved list of all Purchases", response = Purchase.class, responseContainer = "List") })
+    @RequestMapping(value = "/test/purchases",
         produces = { "application/json" }, 
-        consumes = { "application/json" },
-        method = RequestMethod.POST)
-    default ResponseEntity<User> loginUser(@ApiParam(value = "The user object for login"  )  @Valid @RequestBody UserAuth userAuth) {
+        method = RequestMethod.GET)
+    default ResponseEntity<List<Purchase>> getTestMessage() {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"apiKey\" : \"apiKey\", \"fio\" : \"fio\", \"username\" : \"username\" }";
+                    String exampleString = "{ \"shared\" : true, \"createdDate\" : \"2000-01-23T04:56:07.000+00:00\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"sharedForUsername\" : \"sharedForUsername\", \"name\" : \"name\", \"checked\" : true, \"id\" : 0, \"text\" : \"text\", \"items\" : [ { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" }, { \"ord\" : 5, \"itemName\" : \"itemName\", \"checkedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"purchaseId\" : 1, \"checked\" : true, \"active\" : true, \"id\" : 6, \"itemDescription\" : \"itemDescription\" } ], \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
-    }
-
-
-    @ApiOperation(value = "Logs out currently logged in user session", nickname = "logoutUser", notes = "", tags={ "Auth", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Ok response. You are now logged out") })
-    @RequestMapping(value = "/auth/logout",
-        method = RequestMethod.GET)
-    default ResponseEntity<Void> logoutUser() {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

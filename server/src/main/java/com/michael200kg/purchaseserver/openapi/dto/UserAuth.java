@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
 /**
  * UserAuth
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-12-26T13:05:26.315346700+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-01-08T01:41:58.754751300+03:00[Europe/Moscow]")
 
 public class UserAuth  implements Serializable {
   private static final long serialVersionUID = 1L;

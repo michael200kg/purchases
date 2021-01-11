@@ -10,7 +10,7 @@ spring:
     password: purchase1
     hikari:
       connection-timeout: 60000
-      maximum-pool-size: 5
+      maximum-pool-size: 2
   flyway:
     locations: classpath:migration
     table: SCHEMA_VERSION
