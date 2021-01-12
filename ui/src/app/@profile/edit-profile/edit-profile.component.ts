@@ -9,11 +9,11 @@ import { User, UserService } from '../../@api-module';
 })
 export class EditProfileComponent implements OnInit {
 
-  user: User = {username: '', fio: ''};
+  user: User = {username: '', fio: '', gender: ''};
 
   constructor(private userFacade: UserFacade,
               private userService: UserService/*,
-               private router: Router*/) {
+              private router: Router*/) {
   }
 
   ngOnInit() {

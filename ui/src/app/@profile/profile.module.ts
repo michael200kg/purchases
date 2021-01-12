@@ -5,6 +5,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { FormsModule } from '@angular/forms';
 import { FlexModule } from '@angular/flex-layout';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { MatButtonModule, MatSelectModule } from '@angular/material';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     CommonModule,
     ProfileRoutingModule,
     FormsModule,
-    FlexModule
+    FlexModule,
+    MatButtonModule,
+    MatSelectModule
   ]
 })
 export class ProfileModule {

@@ -58,10 +58,10 @@
     </div>
     <div class="card-footer">
         <div fxLayout="row" fxLayoutGap="10px">
-            <button (click)="save()" class="btn btn-success btn-sm">
+            <button mat-flat-button color="warn" (click)="save()">
                 {{buttonLabel}}
             </button>
-            <button routerLink="'/app/front/purchases/purchase-list'" class="btn btn-success btn-sm">
+            <button mat-flat-button color="accent" routerLink="'/app/front/purchases/purchase-list'">
                 Выход
             </button>
         </div>

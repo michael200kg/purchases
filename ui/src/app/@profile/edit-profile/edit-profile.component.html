@@ -11,8 +11,16 @@
 
     </div>
 
+    <div fxLayout="row" style="min-width: 90%" fxLayoutAlign="start center">
+        <div fxFlex="20">Пол</div>
+        <mat-select [(ngModel)]="user.gender" >
+            <mat-option value="male">Мужской</mat-option>
+            <mat-option value="female">Женский</mat-option>
+        </mat-select>
+    </div>
+
     <div fxLayout="row" fxLayoutGap="10px">
-        <button class="mat-button" (click)="update()">Изменить</button>
-        <button class="mat-button" routerLink="/app/front/purchases">Выйти</button>
+        <button mat-flat-button color="warn" (click)="update()">Изменить</button>
+        <button mat-flat-button color="accent" routerLink="/app/front/purchases">Выйти</button>
     </div>
 </div>

@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-01-08T01:41:58.754751300+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-01-12T13:45:49.110733200+03:00[Europe/Moscow]")
 
 @Validated
 @Api(value = "Auth", description = "the Auth API")
@@ -48,7 +48,7 @@ public interface AuthApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"apiKey\" : \"apiKey\", \"fio\" : \"fio\", \"username\" : \"username\" }";
+                    String exampleString = "{ \"apiKey\" : \"apiKey\", \"gender\" : \"gender\", \"fio\" : \"fio\", \"username\" : \"username\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

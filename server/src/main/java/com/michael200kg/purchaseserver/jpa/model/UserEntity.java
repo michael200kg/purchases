@@ -18,4 +18,5 @@ public class UserEntity {
     private String username;
     private String fio;
     private String apiKey;
+    private String gender;
 }

@@ -15,6 +15,7 @@ export interface User {
     username?: string;
     fio?: string;
     apiKey?: string;
+    gender?: string;
 }
 
 

@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
 /**
  * User
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-01-08T01:41:58.754751300+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-01-12T13:45:49.110733200+03:00[Europe/Moscow]")
 
 public class User  implements Serializable {
   private static final long serialVersionUID = 1L;
@@ -26,6 +26,9 @@ public class User  implements Serializable {
 
   @JsonProperty("apiKey")
   private String apiKey;
+
+  @JsonProperty("gender")
+  private String gender;
 
   public User username(String username) {
     this.username = username;
@@ -87,6 +90,26 @@ public class User  implements Serializable {
     this.apiKey = apiKey;
   }
 
+  public User gender(String gender) {
+    this.gender = gender;
+    return this;
+  }
+
+  /**
+   * Get gender
+   * @return gender
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getGender() {
+    return gender;
+  }
+
+  public void setGender(String gender) {
+    this.gender = gender;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,12 +122,13 @@ public class User  implements Serializable {
     User user = (User) o;
     return Objects.equals(this.username, user.username) &&
         Objects.equals(this.fio, user.fio) &&
-        Objects.equals(this.apiKey, user.apiKey);
+        Objects.equals(this.apiKey, user.apiKey) &&
+        Objects.equals(this.gender, user.gender);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(username, fio, apiKey);
+    return Objects.hash(username, fio, apiKey, gender);
   }
 
   @Override
@@ -115,6 +139,7 @@ public class User  implements Serializable {
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    fio: ").append(toIndentedString(fio)).append("\n");
     sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
+    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("}");
     return sb.toString();
   }

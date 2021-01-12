@@ -1,6 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="start center">
     <button mat-icon-button [matMenuTriggerFor]="menu">
-        <img src="/assets/images/{{user.username.toLowerCase() === 'koshka' ? 'woman-avatar.png' : 'man-avatar.png'}}"
+        <img *ngIf="user"
+             [src]="'/assets/images/' + getLogoImage()"
              width="48px">
     </button>
     <mat-menu #menu="matMenu">
@@ -20,10 +21,13 @@
             <mat-icon class="material-icons color-orange">password</mat-icon>
             <span>Сменить пароль</span>
         </button>
-
+        <button mat-menu-item routerLink="/app/auth/logout">
+            <mat-icon class="material-icons color-orange">person_off</mat-icon>
+            <span>Выйти</span>
+        </button>
     </mat-menu>
 
-    <div class="ml-2 user-title">{{user.fio}}</div>
+    <div class="ml-3 user-title">{{user.fio}}</div>
 
 </div>
 

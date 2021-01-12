@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffbf46;
 }
 
+.mat-card {
+    background-color: #212020;
+}
+
 .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
     height: 40px !important;
 }
@@ -23,7 +27,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mat-card-header {
-    background-color: #a77205;
+    /*background-color: #a77205;*/
+    color: #fbb627;
+}
+.mat-card-header-text {
+    margin: 0 2px !important;
 }
 
 .mat-list-item:nth-child(2n+1) {

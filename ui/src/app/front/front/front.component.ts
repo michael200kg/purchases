@@ -18,4 +18,8 @@ export class FrontComponent implements OnInit {
   ngOnInit() {
   }
 
+  getLogoImage(): string {
+    return this.user.gender === 'male' ? 'jenkins.svg' : 'woman-avatar.png';
+  }
+
 }

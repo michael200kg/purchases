@@ -42,13 +42,13 @@
     </div>
     <div class="card-footer">
         <div fxLayout="row" fxLayoutGap="10px">
-            <button (click)="save()" class="btn btn-success btn-sm">
+            <button mat-flat-button color="warn" (click)="save()">
                 {{buttonLabel}}
             </button>
-            <button (click)="createPurchase()" class="btn btn-success btn-sm">
+            <button mat-flat-button color="warn" (click)="createPurchase()">
                 Создать список покупок
             </button>
-            <button routerLink="'/app/front/templates/template-list'" class="btn btn-success btn-sm">
+            <button mat-flat-button color="accent" routerLink="'/app/front/templates/template-list'" class="btn btn-success btn-sm">
                 Выход
             </button>
         </div>
