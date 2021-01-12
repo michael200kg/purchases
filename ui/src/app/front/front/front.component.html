@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="start center">
-    <button mat-icon-button [matMenuTriggerFor]="menu" >
-        <img src="/assets/images/man-avatar.png" width="48px">
-<!--        <mat-icon color="accent">account_circle</mat-icon>-->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <img src="/assets/images/{{user.username.toLowerCase() === 'koshka' ? 'woman-avatar.png' : 'man-avatar.png'}}"
+             width="48px">
     </button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item routerLink="/app/front/purchases/purchase-list">
