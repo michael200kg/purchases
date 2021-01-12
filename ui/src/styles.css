@@ -1,27 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '../node_modules/@angular/material/prebuilt-themes/purple-green.css';
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffbf46;
+}
 
 .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
     height: 40px !important;
 }
-.mat-list-item:nth-child(2n+1){
-    background-color:#f1eded;
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+    padding: 0 10px !important;
 }
-.mat-list-item:nth-child(2n){
-    background-color:white;
+
+.mat-card-header {
+    background-color: #a77205;
 }
+
+.mat-list-item:nth-child(2n+1) {
+    background-color: #484848;
+}
+
+/*.mat-list-item:nth-child(2n){*/
+/*    background-color: #212121;*/
+/*}*/
 
 .checked-item {
     text-decoration: line-through;
-    color: lightgray;
+    color: #6b6a6a;
 }
 
 .unchecked-item {
     text-decoration: none;
-    color: black;
+    /*color: black;*/
 }
 
-.material-icons.color_active { color: black; }
-.material-icons.color_inactive { color: lightgray; }
+.material-icons.color_active {
+    color: #fece48;
+}
+
+.material-icons.color_inactive {
+    color: #706220;
+}
+
+.item-name {
+    font-family: Roboto;
+    font-size: 10pt;
+    /*font-weight: bold;*/
+}
+
+.date-in-list {
+    font-size: 10pt;
+    color: wheat;
+}
+
+.material-icons.color-green { color: #00FF00; }
+.material-icons.color-orange { color: #f3912d; }

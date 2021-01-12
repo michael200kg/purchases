@@ -21,9 +21,9 @@
                  fxLayout="row">
                 <div fxFlex="90">
                     <div fxLayout="column">
-                        <div style="font-size: 10pt;">{{p.createdDate | date: 'dd.MM.yyyy'}}</div>
-                        <div [class]="getCheckedClass(p)" (click)="checkPurchase(p.id)" fxFlex="100">
-                            <b>{{p.name}}</b>
+                        <div class="date-in-list">{{p.createdDate | date: 'dd.MM.yyyy'}}</div>
+                        <div [class]="getCheckedClass(p) + ' item-name'" (click)="checkPurchase(p.id)" fxFlex="100">
+                            {{p.name}}
                         </div>
                     </div>
                 </div>

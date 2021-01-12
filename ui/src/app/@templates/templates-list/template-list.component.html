@@ -20,8 +20,8 @@
             <div style="border-bottom: 1px solid lightgray" *ngFor="let t of templates"
                  fxLayout="row" fxLayoutAlign="start center">
                 <div fxFlex="100">
-                    <div (click)="editTemplate(t.id)" fxFlex="70">
-                        <b>{{t.name}}</b>
+                    <div (click)="editTemplate(t.id)" class="item-name" fxFlex="70">
+                        {{t.name}}
                     </div>
                     <div fxFlex="15">
                         <button mat-mini-fab (click)="createPurchase(t)" color="primary">

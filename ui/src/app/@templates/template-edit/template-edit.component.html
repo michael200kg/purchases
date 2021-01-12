@@ -30,7 +30,7 @@
                 <mat-list>
                     <mat-list-item *ngFor="let item of template.items">
                         <div fxLayout="row" style="width:100%" fxLayoutAlign="start center">
-                            <div fxFlex="90" (click)="editItem(item.id)">{{item.itemName}}</div>
+                            <div fxFlex="90" (click)="editItem(item.id)" class="item-name">{{item.itemName}}</div>
                             <mat-icon fxFlex="10" (click)="deleteItem(item.id)" color="warn">clear</mat-icon>
                         </div>
                     </mat-list-item>
