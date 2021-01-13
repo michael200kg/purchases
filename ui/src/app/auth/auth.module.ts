@@ -5,6 +5,7 @@ import { FlexModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LogoutComponent } from './logout/logout.component';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [LoginComponent, LogoutComponent],
@@ -13,7 +14,8 @@ import { LogoutComponent } from './logout/logout.component';
     CommonModule,
     FlexModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ]
 })
 export class AuthModule {

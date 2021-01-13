@@ -4,8 +4,8 @@
 
         <div fxLayout="row" style="width:100%" fxLayoutAlign="start center" fxLayoutGap="10px">
             <div fxFlex="80">СПИСОК ПОКУПОК</div>
-            <div>
-                <button mat-mini-fab color="primary" (click)="createPurchase()">
+            <div fxFlex="20">
+                <button mat-flat-button color="primary" (click)="createPurchase()">
                     <mat-icon>add</mat-icon>
                 </button>
             </div>
@@ -39,14 +39,20 @@
     </mat-card-content>
 </mat-card>
 
+<!--<div style="position: fixed;right: 30px;top: 30px;">-->
+<!--    <button mat-flat-button color="warn" (click)="createPurchase()">-->
+<!--        <mat-icon>add</mat-icon>-->
+<!--    </button>-->
+<!--</div>-->
+
 <mat-menu #appMenu="matMenu">
     <ng-template matMenuContent let-id="id">
         <button mat-menu-item (click)="editPurchase(id)">
-            <mat-icon color="primary">edit</mat-icon>
+            <mat-icon class="material-icons color-orange">border_color</mat-icon>
             <span>Изменить</span>
         </button>
         <button mat-menu-item (click)="deletePurchase(id)">
-            <mat-icon color="warn">cancel</mat-icon>
+            <mat-icon color="warn">delete_forever</mat-icon>
             <span>Удалить</span>
         </button>
     </ng-template>

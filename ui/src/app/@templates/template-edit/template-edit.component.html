@@ -11,7 +11,6 @@
                            type="text">
                 </div>
 
-
                 <div fxFlex="90" fxLayout="column">
                     <div>Добавить товар:</div>
                     <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
@@ -20,7 +19,7 @@
                                formControlName="itemName"
                                id="itemName"
                                type="text">
-                        <button mat-mini-fab color="primary"
+                        <button mat-flat-button color="primary"
                                 (click)="addItem()">
                             <mat-icon>add</mat-icon>
                         </button>
@@ -30,8 +29,9 @@
                 <mat-list>
                     <mat-list-item *ngFor="let item of template.items">
                         <div fxLayout="row" style="width:100%" fxLayoutAlign="start center">
-                            <div fxFlex="90" (click)="editItem(item.id)" class="item-name">{{item.itemName}}</div>
-                            <mat-icon fxFlex="10" (click)="deleteItem(item.id)" color="warn">clear</mat-icon>
+                            <div fxFlex="92" (click)="editItem(item.id)" class="item-name">{{item.itemName}}</div>
+                            <mat-icon fxFlex="8" (click)="deleteItem(item.id)"
+                                      color="warn">delete_forever</mat-icon>
                         </div>
                     </mat-list-item>
                 </mat-list>
@@ -45,7 +45,7 @@
             <button mat-flat-button color="warn" (click)="save()">
                 {{buttonLabel}}
             </button>
-            <button mat-flat-button color="warn" (click)="createPurchase()">
+            <button mat-flat-button color="primary" (click)="createPurchase()">
                 Создать список покупок
             </button>
             <button mat-flat-button color="accent" routerLink="'/app/front/templates/template-list'" class="btn btn-success btn-sm">

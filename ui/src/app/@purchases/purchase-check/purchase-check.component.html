@@ -22,7 +22,7 @@
                              mat-line>{{item.itemName}}</div>
                         <div fxFlex="5"
                              [class]="item.checked ? 'checked-item' : 'unchecked-item'">
-                            <mat-icon [color]="item.checked ? '' : 'primary'" (click)="editItem(item)">settings</mat-icon>
+                            <mat-icon [class]="item.checked ? 'material-icons' : 'material-icons color-orange'" (click)="editItem(item)">settings</mat-icon>
                         </div>
                     </div>
                 </mat-list-item>
@@ -33,7 +33,7 @@
     </div>
     <div class="card-footer">
         <div fxLayout="row" fxLayoutGap="10px">
-            <button class="btn btn-success btn-sm" routerLink="/app/front/purchases">
+            <button mat-flat-button color="accent" routerLink="/app/front/purchases">
                 Выход
             </button>
         </div>

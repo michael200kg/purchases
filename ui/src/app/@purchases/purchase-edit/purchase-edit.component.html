@@ -32,7 +32,7 @@
                                id="itemName"
                                type="text">
 
-                        <button mat-mini-fab color="primary"
+                        <button mat-flat-button color="primary"
                                 (click)="addItem()">
                             <mat-icon>add</mat-icon>
                         </button>
@@ -45,9 +45,9 @@
                             <mat-icon fxFlex="10" (click)="toggleActivity(item.id)"
                                       class="{{item.active ? 'material-icons color_active' : 'material-icons color_inactive'}}">
                                 {{item.active ? 'visibility' : 'visibility_off' }}</mat-icon>
-                            <div [class]="item.active ? 'item-name' : 'non-active-item item-name'" fxFlex="85"
+                            <div [class]="item.active ? 'item-name' : 'non-active-item item-name'" fxFlex="82"
                                  (click)="editItem(item.id)">{{item.itemName}}</div>
-                            <mat-icon fxFlex="5" (click)="deleteItem(item.id)" color="warn">cancel</mat-icon>
+                            <mat-icon fxFlex="8" (click)="deleteItem(item.id)" color="warn">delete_forever</mat-icon>
                         </div>
                     </mat-list-item>
                 </mat-list>
